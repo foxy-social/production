@@ -1,9 +1,7 @@
 [Unit]
-Description=Akkoma App Container
+Description=Openresty Reverse Proxy
 After=docker-bootstrap.service
 Requires=docker-bootstrap.service
-After=app.service
-Requires=app.service
 
 [Service]
 TimeoutStartSec=0

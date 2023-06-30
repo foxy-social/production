@@ -7,6 +7,7 @@ docker create \
   --hostname philomena \
   --env-file /home/app/docker/.env \
   -v /home/app/docker/web/certs:/etc/ssl/private \
+  -v /home/app/docker/web/www:/var/www \
   -p 443:443 \
   web:latest
 

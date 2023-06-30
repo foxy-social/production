@@ -1,0 +1,10 @@
+[Unit]
+Description=Docker Availability Checker Service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/home/app/docker/services/docker-bootstrap.sh
+
+[Install]
+WantedBy=multi-user.target

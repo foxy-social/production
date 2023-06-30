@@ -1,0 +1,12 @@
+[Unit]
+Description=App Elasticsearch Container
+After=docker-bootstrap.service
+Requires=docker-bootstrap.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/home/app/docker/services/elasticsearch.sh
+
+[Install]
+WantedBy=multi-user.target

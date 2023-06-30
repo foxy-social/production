@@ -1,0 +1,12 @@
+[Unit]
+Description=App Redis Container
+After=docker-bootstrap.service
+Requires=docker-bootstrap.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/home/app/docker/services/redis.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Akkoma App Container
+After=docker-bootstrap.service
+Requires=docker-bootstrap.service
+After=app.service
+Requires=app.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/home/app/docker/services/start-web.sh
+ExecStop=/home/app/docker/services/stop-web.sh
+
+[Install]
+WantedBy=multi-user.target

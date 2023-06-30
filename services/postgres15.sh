@@ -2,7 +2,7 @@
 docker run \
   --rm \
   --name foxy-postgres15 \
-  --hostname postgres \
+  --hostname db \
   --network foxy-network-postgres \
   --shm-size=1g \
   -e POSTGRES_PASSWORD=akkoma \

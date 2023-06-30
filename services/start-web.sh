@@ -6,7 +6,7 @@ docker create \
   --network foxy-network-web \
   --hostname philomena \
   --env-file /home/app/docker/.env \
-  -v /home/app/docker/web/certs:/usr/local/openresty/nginx/conf/certs \
+  -v /home/app/docker/web/certs:/etc/ssl/private \
   -p 443:443 \
   web:latest
 

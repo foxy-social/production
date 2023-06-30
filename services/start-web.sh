@@ -8,7 +8,7 @@ docker create \
   --env-file /home/app/docker/.env \
   -v /home/app/docker/web/certs:/usr/local/openresty/nginx/conf/certs \
   -p 443:443 \
-  app:latest
+  web:latest
 
 docker network connect foxy-network-app foxy-web
 

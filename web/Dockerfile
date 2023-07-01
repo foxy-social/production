@@ -1,11 +1,9 @@
 FROM openresty/openresty:1.21.4.1-alpine
 
-RUN ln -sf /usr/local/openresty/nginx/conf /etc/nginx \
-    && ln -sf /usr/local/openresty/nginx/logs /var/log/nginx \
-    && mkdir /usr/local/openresty/nginx/conf/sites-enabled \
+RUN mkdir /usr/local/openresty/nginx/conf/sites-enabled \
     && mkdir /usr/local/openresty/nginx/conf/certs
 
-COPY ./nginx.conf /tmp/docker.nginx
+COPY ./nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY ./dynamic.conf /usr/local/openresty/nginx/conf/dynamic.conf
 COPY ./cors.conf /usr/local/openresty/nginx/conf/cors.conf
 COPY ./sites-enabled/foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/foxy.social.conf

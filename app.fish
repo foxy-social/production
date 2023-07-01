@@ -42,7 +42,8 @@ function akkoma
     --hostname app-management \
     --env-file /home/app/docker/.env \
     -v /home/app/docker/app:/opt/akkoma \
-    app:latest
+    app:latest \
+    /opt/akkoma/sleep.sh
   
   docker network connect foxy-network-elastic foxy-app-management
   docker network connect foxy-network-postgres foxy-app-management

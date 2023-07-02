@@ -9,6 +9,8 @@ COPY ./cors.conf /usr/local/openresty/nginx/conf/cors.conf
 COPY ./sites-enabled/foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/foxy.social.conf
 COPY ./certs/default_cert.conf /usr/local/openresty/nginx/conf/certs/default_cert.conf
 COPY ./certs/verify_client.conf /usr/local/openresty/nginx/conf/certs/verify_client.conf
+COPY ./lua/init.lus /usr/local/openresty/nginx/conf/lua/init.lua
+COPY ./lua/aws-signature.lua /usr/local/openresty/nginx/conf/lua/aws-signature.lua
 
 EXPOSE 443
 

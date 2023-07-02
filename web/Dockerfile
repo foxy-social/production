@@ -1,7 +1,9 @@
 FROM openresty/openresty:1.21.4.1-alpine
 
 RUN mkdir /usr/local/openresty/nginx/conf/sites-enabled \
-    && mkdir /usr/local/openresty/nginx/conf/certs
+    && mkdir /usr/local/openresty/nginx/conf/certs \
+    && apk add --no-cache gettext curl perl \
+    && opm get jkeys089/lua-resty-hmac=0.06
 
 COPY ./nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY ./dynamic.conf /usr/local/openresty/nginx/conf/dynamic.conf

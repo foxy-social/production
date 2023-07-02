@@ -7,7 +7,9 @@ RUN mkdir /usr/local/openresty/nginx/conf/sites-enabled \
 
 COPY ./nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY ./dynamic.conf /usr/local/openresty/nginx/conf/dynamic.conf
+COPY ./static.conf /usr/local/openresty/nginx/conf/static.conf
 COPY ./cors.conf /usr/local/openresty/nginx/conf/cors.conf
+COPY ./sites-enabled/data.foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/data.foxy.social.conf
 COPY ./sites-enabled/foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/foxy.social.conf
 COPY ./certs/default_cert.conf /usr/local/openresty/nginx/conf/certs/default_cert.conf
 COPY ./certs/verify_client.conf /usr/local/openresty/nginx/conf/certs/verify_client.conf

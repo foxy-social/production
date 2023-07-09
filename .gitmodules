@@ -1,3 +1,6 @@
 [submodule "app"]
 	path = app
 	url = https://github.com/foxy-social/akkoma
+[submodule "soapbox"]
+	path = soapbox
+	url = https://github.com/foxy-social/soapbox

@@ -7,7 +7,6 @@ docker create \
   --hostname app \
   --env-file /home/app/docker/.env \
   -v /home/app/docker/app:/opt/akkoma \
-  -v /home/app/docker/soapbox:/var/www/soapbox \
   app:latest
 
 docker network connect foxy-network-web foxy-app

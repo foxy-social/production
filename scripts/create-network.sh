@@ -2,32 +2,32 @@
 docker network create \
   --driver=bridge \
   --subnet=10.11.0.0/24 \
-  --opt com.docker.network.bridge.name=br-app \
+  --opt com.docker.network.bridge.name=br-foxapp \
   foxy-network-app
 
 docker network create \
   --driver=bridge \
   --subnet=10.12.0.0/24 \
   --internal \
-  --opt com.docker.network.bridge.name=br-osearch \
+  --opt com.docker.network.bridge.name=br-foxsearch \
   foxy-network-osearch
 
 docker network create \
   --driver=bridge \
   --subnet=10.13.0.0/24 \
   --internal \
-  --opt com.docker.network.bridge.name=br-valkey \
+  --opt com.docker.network.bridge.name=br-foxvalkey \
   foxy-network-valkey
 
 docker network create \
   --driver=bridge \
   --subnet=10.14.0.0/24 \
   --internal \
-  --opt com.docker.network.bridge.name=br-postgres \
+  --opt com.docker.network.bridge.name=br-foxpostgres \
   foxy-network-postgres
 
 docker network create \
   --driver=bridge \
   --subnet=10.15.0.0/24 \
-  --opt com.docker.network.bridge.name=br-web \
+  --opt com.docker.network.bridge.name=br-foxweb \
   foxy-network-web

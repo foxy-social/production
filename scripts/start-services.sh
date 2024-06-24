@@ -1,7 +1,7 @@
 #!/bin/sh
-systemctl --user start app-valkey
-systemctl --user start app-postgres16
-systemctl --user start app-opensearch
+systemctl --user start foxy-valkey
+systemctl --user start foxy-postgres16
+systemctl --user start foxy-opensearch
 
 sleep 20
 

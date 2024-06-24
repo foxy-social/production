@@ -39,7 +39,7 @@ function akkoma
   docker create \
     --name foxy-app-management \
     --network foxy-network-app \
-    --hostname foxy-app-management \
+    --hostname foxymanagement \
     --env-file /home/foxy/docker/.env \
     -v /home/foxy/docker/app:/opt/akkoma \
     foxyapp:latest \

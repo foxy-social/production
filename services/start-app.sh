@@ -4,10 +4,10 @@
 docker create \
   --name foxy-app \
   --network foxy-network-app \
-  --hostname app \
+  --hostname foxysocial \
   --env-file /home/foxy/docker/.env \
   -v /home/foxy/docker/app:/opt/akkoma \
-  app:latest
+  foxyapp:latest
 
 docker network connect foxy-network-web foxy-app
 docker network connect foxy-network-osearch foxy-app

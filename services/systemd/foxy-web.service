@@ -1,12 +1,13 @@
 [Unit]
-Description=App Redis Container
+Description=Openresty Reverse Proxy
 After=docker-bootstrap.service
 Requires=docker-bootstrap.service
 
 [Service]
 TimeoutStartSec=0
 Restart=always
-ExecStart=/home/app/docker/services/redis.sh
+ExecStart=/home/foxy/docker/services/start-web.sh
+ExecStop=/home/foxy/docker/services/stop-web.sh
 
 [Install]
 WantedBy=multi-user.target

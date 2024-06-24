@@ -1,12 +1,12 @@
 [Unit]
-Description=App PostgreSQL 15 Container
+Description=App Opensearch Container
 After=docker-bootstrap.service
 Requires=docker-bootstrap.service
 
 [Service]
 TimeoutStartSec=0
 Restart=always
-ExecStart=/home/app/docker/services/postgres15.sh
+ExecStart=/home/foxy/docker/services/start-opensearch.sh
 
 [Install]
 WantedBy=multi-user.target

@@ -10,17 +10,17 @@ function viewlogs
 end
 
 function psql
-  docker exec -it foxy-postgres15 psql -h 127.0.0.1 -U akkoma akkoma
+  docker exec -it foxy-postgres16 psql -h 127.0.0.1 -U akkoma akkoma
 end
 
 function restart
   switch $argv[1]
   case all
-    systemctl --user stop app app-postgres15 app-redis app-elasticsearch
-    systemctl --user start app-postgres15 app-redis app-elasticsearch app
+    systemctl --user stop foxy-app foxy-postgres16 foxy-valkey foxy-opensearch
+    systemctl --user start foxy-postgres16 foxy-valkey foxy-opensearch foxy-app
   case akkoma
-    systemctl --user stop app
-    systemctl --user start app
+    systemctl --user stop foxy-app
+    systemctl --user start foxy-app
   case '*'
     systemctl --user stop $argv[1]
     systemctl --user start $argv[1]
@@ -28,8 +28,8 @@ function restart
 end
 
 function akkoma
-  if docker ps -a -q -f name=foxy-app-management
-    docker kill foxy-app-management
+  if docker ps -a -q -f name=foxy-foxy-management
+    docker kill foxy-foxy-management
   end
   
   if docker ps -aq -f status=exited -f name=foxy-app-management
@@ -39,15 +39,15 @@ function akkoma
   docker create \
     --name foxy-app-management \
     --network foxy-network-app \
-    --hostname app-management \
-    --env-file /home/app/docker/.env \
-    -v /home/app/docker/app:/opt/akkoma \
-    app:latest \
+    --hostname foxy-app-management \
+    --env-file /home/foxy/docker/.env \
+    -v /home/foxy/docker/app:/opt/akkoma \
+    foxyapp:latest \
     /opt/akkoma/sleep.sh
   
-  docker network connect foxy-network-elastic foxy-app-management
+  docker network connect foxy-network-osearch foxy-app-management
   docker network connect foxy-network-postgres foxy-app-management
-  docker network connect foxy-network-redis foxy-app-management
+  docker network connect foxy-network-valkey foxy-app-management
   
   docker start foxy-app-management
 

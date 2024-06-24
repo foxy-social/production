@@ -1,0 +1,19 @@
+[Unit]
+Description=Akkoma App Container
+After=docker-bootstrap.service
+Requires=docker-bootstrap.service
+After=foxy-valkey.service
+Requires=foxy-valkey.service
+After=foxy-postgres16.service
+Requires=foxy-postgres16.service
+After=foxy-opensearch.service
+Requires=foxy-opensearch.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/home/foxy/docker/services/start-app.sh
+ExecStop=/home/foxy/docker/services/stop-app.sh
+
+[Install]
+WantedBy=multi-user.target

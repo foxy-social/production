@@ -7,6 +7,7 @@ docker create \
   --hostname foxysocial \
   --env-file /home/foxy/docker/.env \
   -v /home/foxy/docker/app:/opt/akkoma \
+  -p 10.100.0.2:5000:4000 \
   foxyapp:latest
 
 docker network connect foxy-network-web foxy-app

@@ -2,13 +2,13 @@
 #
 # Use a descriptive name for your cluster:
 #
-cluster.name: foxy
+cluster.name: docker-cluster
 #
 # ------------------------------------ Node ------------------------------------
 #
 # Use a descriptive name for the node:
 #
-node.name: fox
+#node.name: fox
 #
 # Add custom attributes to the node:
 #

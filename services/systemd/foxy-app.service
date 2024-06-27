@@ -2,8 +2,6 @@
 Description=Akkoma App Container
 After=docker-bootstrap.service
 Requires=docker-bootstrap.service
-After=foxy-valkey.service
-Requires=foxy-valkey.service
 After=foxy-postgres16.service
 Requires=foxy-postgres16.service
 After=foxy-opensearch.service

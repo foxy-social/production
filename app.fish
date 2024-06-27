@@ -16,8 +16,8 @@ end
 function restart
   switch $argv[1]
   case all
-    systemctl --user stop foxy-app foxy-postgres16 foxy-valkey foxy-opensearch
-    systemctl --user start foxy-postgres16 foxy-valkey foxy-opensearch foxy-app
+    systemctl --user stop foxy-app foxy-postgres16 foxy-opensearch
+    systemctl --user start foxy-postgres16 foxy-opensearch foxy-app
   case akkoma
     systemctl --user stop foxy-app
     systemctl --user start foxy-app
@@ -47,7 +47,6 @@ function akkoma
   
   docker network connect foxy-network-osearch foxy-app-management
   docker network connect foxy-network-postgres foxy-app-management
-  docker network connect foxy-network-valkey foxy-app-management
   
   docker start foxy-app-management
 

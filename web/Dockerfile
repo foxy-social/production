@@ -10,10 +10,12 @@ RUN mkdir /usr/local/openresty/nginx/conf/sites-enabled \
 
 COPY ./nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY ./dynamic.conf /usr/local/openresty/nginx/conf/dynamic.conf
+COPY ./ext.conf /usr/local/openresty/nginx/conf/ext.conf
 COPY ./static.conf /usr/local/openresty/nginx/conf/static.conf
 COPY ./frontend.conf /usr/local/openresty/nginx/conf/frontend.conf
 COPY ./cors.conf /usr/local/openresty/nginx/conf/cors.conf
 COPY ./sites-enabled/data.foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/data.foxy.social.conf
+COPY ./sites-enabled/ext.foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/ext.foxy.social.conf
 COPY ./sites-enabled/foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/foxy.social.conf
 COPY ./sites-enabled/soapbox.foxy.social.conf /usr/local/openresty/nginx/conf/sites-enabled/soapbox.foxy.social.conf
 COPY ./certs/default_cert.conf /usr/local/openresty/nginx/conf/certs/default_cert.conf

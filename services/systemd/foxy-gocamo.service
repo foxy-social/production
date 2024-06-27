@@ -1,12 +1,12 @@
 [Unit]
-Description=App Valkey Container
+Description=Go-Camo Container
 After=docker-bootstrap.service
 Requires=docker-bootstrap.service
 
 [Service]
 TimeoutStartSec=0
 Restart=always
-ExecStart=/home/foxy/docker/services/start-valkey.sh
+ExecStart=/home/foxy/docker/services/start-gocamo.sh
 
 [Install]
 WantedBy=multi-user.target

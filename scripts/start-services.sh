@@ -1,5 +1,4 @@
 #!/bin/sh
-systemctl --user start foxy-valkey
 systemctl --user start foxy-postgres16
 systemctl --user start foxy-opensearch
 

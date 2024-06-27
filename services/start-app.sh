@@ -13,6 +13,5 @@ docker create \
 docker network connect foxy-network-web foxy-app
 docker network connect foxy-network-osearch foxy-app
 docker network connect foxy-network-postgres foxy-app
-docker network connect foxy-network-valkey foxy-app
 
 docker start -ia foxy-app

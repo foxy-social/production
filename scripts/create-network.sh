@@ -14,13 +14,6 @@ docker network create \
 
 docker network create \
   --driver=bridge \
-  --subnet=10.13.0.0/24 \
-  --internal \
-  --opt com.docker.network.bridge.name=br-foxvalkey \
-  foxy-network-valkey
-
-docker network create \
-  --driver=bridge \
   --subnet=10.14.0.0/24 \
   --internal \
   --opt com.docker.network.bridge.name=br-foxpostgres \
